@@ -1,6 +1,7 @@
 # 📀 Správce CD sbírky
 ## Seznam změn:
 * 20.03.2026 - Vytvoření frontendu, náčrt backendu, vytvoření vlastností (public string Nazev,..)
+* 25.03.2026 - Zprovoznění kolekce, přidávacího a mazacího tlačítka
 
 ## Co bude spravovat?
 Program bude sledovat sbírku mých CDs, které vlastním. Zároveň bude v aplikaci implementován wishlist, kde budou všechna CDs, které bych si chtěl jednoho dne zakoupit.<br>
