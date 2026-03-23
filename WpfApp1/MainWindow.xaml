@@ -10,33 +10,40 @@
         <DataGrid x:Name="CDgrid"
           Grid.Column="0"
           Margin="0,0,300,0"
-          AutoGenerateColumns="True"
+          AutoGenerateColumns="False"
           CanUserAddRows="False"
           IsReadOnly="True"
           SelectionMode="Single"
           SelectionUnit="FullRow">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="ID" Binding="{Binding ID}" Width="60"/>
+                <DataGridTextColumn Header="ID" Binding="{Binding ID}"  Width="60"/>
                 <DataGridTextColumn Header="Název" Binding="{Binding Nazev}" Width="450"/>
                 <DataGridTextColumn Header="Interpret" Binding="{Binding Artist}" Width="275"/>
-                <DataGridTextColumn Header="Datum vydání" Binding="{Binding DatumVydani}" Width="130"/>
+                <DataGridTextColumn Header="Datum vydání" Binding="{Binding DatumVydani,StringFormat=d}" Width="130"/>
                 <DataGridTextColumn Header="Žánr" Binding="{Binding Zanr}" Width="120"/>
                 <DataGridTextColumn Header="Počet skladeb" Binding="{Binding PocetSkladeb}" Width="90"/>
                 <DataGridTextColumn Header="Vydavatelství" Binding="{Binding Vydavatelstvi}" Width="200"/>
-                <DataGridTextColumn Header="Datum přidání" Binding="{Binding DatumPridani}" Width="130"/>
+                <DataGridTextColumn Header="Datum přidání" Binding="{Binding DatumPridani,StringFormat=d}" Width="130"/>
             </DataGrid.Columns>
         </DataGrid>
-        <TextBlock Margin="1500, 20, 50, 50" Text="CDmanage" FontSize="32" FontWeight="Bold" TextAlignment="Center"></TextBlock>
-        
-        <TextBox TextWrapping="Wrap" Name="name" Text="Jméno alba:" Width="200" Margin="1500, 20, 50, 0"/>
-        <TextBox TextWrapping="Wrap" Name="artist" Text="Jméno umělce:" Width="200" Margin="1500, 20, 50, 0"/>
-        <DatePicker Name="releasedate" Text="Datum vydání:" Margin="1500, 20, 50, 0"></DatePicker>
-        <TextBox TextWrapping="Wrap" Name="zanr" Text="Žánr alba:" Width="200" Margin="1500, 20, 50, 0"/>
-        <TextBox TextWrapping="Wrap" Name="pocet_skladeb" Text="Počet skladeb:" Width="200" Margin="1500, 20, 50, 0"/>
-        <TextBox TextWrapping="Wrap" Name="vydavatelstvi" Text="Vydavatelství:" Width="200" Margin="1500, 20, 50, 0"/>
-        <DatePicker Name="adddate" Text="Datum přidání do sbírky:" Margin="1500, 20, 50, 50"></DatePicker>
+        <TextBlock Margin="1500, 20, 50, 50" Text="CD Manager" FontSize="32" FontWeight="Bold" TextAlignment="Center"></TextBlock>
+
+        <TextBlock Text="Název alba:" Margin="1500, 20, 50, 0"></TextBlock>
+        <TextBox TextWrapping="Wrap" Name="name" Width="200" Margin="1500, 10, 50, 0"/>
+        <TextBlock Text="Jméno umělce:" Margin="1500, 20, 50, 0"></TextBlock>
+        <TextBox TextWrapping="Wrap" Name="artist" Width="200" Margin="1500, 10, 50, 0"/>
+        <TextBlock Text="Datum vydání:" Margin="1500, 20, 50, 0"></TextBlock>
+        <DatePicker Name="releasedate" Margin="1500, 10, 50, 0"></DatePicker>
+        <TextBlock Text="Žánr alba:" Margin="1500, 20, 50, 0"></TextBlock>
+        <TextBox TextWrapping="Wrap" Name="zanr" Width="200" Margin="1500, 10, 50, 0"/>
+        <TextBlock Text="Počet skladeb:" Margin="1500, 20, 50, 0"></TextBlock>
+        <TextBox TextWrapping="Wrap" Name="pocet_skladeb" Width="200" Margin="1500, 10, 50, 0"/>
+        <TextBlock Text="Vydavatelství:" Margin="1500, 20, 50, 0"></TextBlock>
+        <TextBox TextWrapping="Wrap" Name="vydavatelstvi" Width="200" Margin="1500, 10, 50, 0"/>
+        <TextBlock Text="Datum přidání do sbírky:" Margin="1500, 20, 50, 0"></TextBlock>
+        <DatePicker Name="adddate" Margin="1500, 10, 50, 50"></DatePicker>
         <Button Content="Přidat CD" Margin="1500, 20, 50, 0" Click="AddButton_Click"/>
-        <Button Content="Upravit CD" Margin="1500, 20, 50, 0"/>
-        <Button Content="Smazat CD" Margin="1500, 20, 50, 0"/>
+        <Button Content="Upravit CD (NEFUNKČNÍ!)" Margin="1500, 20, 50, 0" Click="EditButton_Click"/>
+        <Button Content="Smazat CD" Margin="1500, 20, 50, 0" Click="DelButton_Click"/>
     </StackPanel>
 </Window>
